@@ -10,6 +10,14 @@ const nextQuoteBtn = document.querySelector('[data-js-attr="new-quote-btn"]')
 const twitterShareBtn = document.querySelector('[data-js-attr="twitter"]')
 
 
+const showLoadingSpinner = () => {
+    quoteContainer.classList.add('quote-container-preloader')
+}
+
+const removeLoadingSpinner = () => {
+    quoteContainer.classList.remove('quote-container-preloader')
+}
+
 const getNewQuotes = () => {
     const randomNumber = Math.floor(Math.random() * quotes.length)
     const randomQuote = quotes[randomNumber]
@@ -17,11 +25,11 @@ const getNewQuotes = () => {
     const authorCheck = author ? author : 'Nameless Author'
     let serverTimeoutImitate
 
-    quoteContainer.classList.add('quote-container-preloader')
+    showLoadingSpinner()
     quoteText.textContent = text
     quoteAuthor.textContent = authorCheck
     serverTimeoutImitate = setTimeout(() => {
-        quoteContainer.classList.remove('quote-container-preloader')
+        removeLoadingSpinner()
         clearTimeout(serverTimeoutImitate)
     }, 1 * 250)
 }
@@ -35,6 +43,7 @@ const getQuotes = async () => {
         newQuotes()
     } catch (e) {
         console.log('getQuotes Error', e)
+        getQuotes()
     }
 }
 
