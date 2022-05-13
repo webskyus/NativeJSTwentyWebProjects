@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  overflow-x: hidden;
+  font-family: 'Roboto Condensed', sans-serif;
+  background: -webkit-linear-gradient(10deg, #7c3c74,#3ea389,#cadeca);background: linear-gradient(10deg, #7c3c74,#3ea389,#cadeca);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.infinity-scroll__title {
+  margin-top: 25px;
+  margin-bottom: 25px;
+  text-align: center;
+  font-size: 40px;
+  letter-spacing: 2px;
+  color: whitesmoke;
+  background: #1B57CF;
+  background: -webkit-linear-gradient(to left, #1B57CF 0%, #162C3D 100%);
+  background: -moz-linear-gradient(to left, #1B57CF 0%, #162C3D 100%);
+  background: linear-gradient(to left, #1B57CF 0%, #162C3D 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.infinity-scroll__loader {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background: rgba(90, 57, 191, 0.3);
+}
+
+
+.infinity-scroll__error--visible h3 {
+  color: white;
+}
+
+.infinity-scroll__error--visible {
+  display: flex;
+  flex-direction: column;
+}
+
+.infinity-scroll__loader--visible {
+  display: flex;
+}
+
+.infinity-scroll__image img {
+  margin: 20px;
+}
+
+.infinity-scroll__image img {
+  max-width: 100%;
+}
+
+.infinity-scroll__image {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.scroll-hidden {
+  overflow: hidden;
+}
