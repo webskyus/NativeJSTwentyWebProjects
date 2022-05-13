@@ -45,6 +45,16 @@ body {
   background: rgba(90, 57, 191, 0.3);
 }
 
+
+.infinity-scroll__error--visible h3 {
+  color: white;
+}
+
+.infinity-scroll__error--visible {
+  display: flex;
+  flex-direction: column;
+}
+
 .infinity-scroll__loader--visible {
   display: flex;
 }
@@ -59,5 +69,9 @@ body {
 
 .infinity-scroll__image {
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
+}
+
+.scroll-hidden {
+  overflow: hidden;
 }
